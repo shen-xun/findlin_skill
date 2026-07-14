@@ -31,13 +31,7 @@ python scripts/linguistics_search.py `
 
 默认爬取全部 23 本期刊；仅当需要缩小范围时传 `--journals id1,id2`。
 
-## 与旧版（OpenAlex）的区别
 
-| | 旧版 | 新版 |
-|---|---|---|
-| 数据源 | OpenAlex 第三方索引 | 期刊官网 + 出版商搜索页 |
-| 时效性 | 可能滞后 6–18 个月 | 按 `published` 倒序，优先最新 |
-| 透明度 | 不透明 | `crawl_log` 记录爬了哪些网站 |
 
 ## 部署
 
