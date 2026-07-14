@@ -10,18 +10,14 @@
 - 框架：generative
 - 英文检索词：`Mandarin ba construction syntactic analysis`
 
-**选刊：**
-`linguistic-inquiry`, `nllt`, `syntax`, `language`, `journal-of-linguistics`
-
-**命令：**
+**命令（默认爬全部 23 本）：**
 ```powershell
 python "$env:USERPROFILE\.agents\skills\linguistics-journal-research\scripts\linguistics_search.py" `
   "Mandarin ba construction syntactic analysis" `
-  --journals linguistic-inquiry,nllt,syntax,language,journal-of-linguistics `
-  --max-per-journal 5 --years 8 -o results.json
+  --max-per-journal 3 --years 8 -o results.json
 ```
 
-输出 `crawl_log` 会显示爬取了哪些期刊官网及命中数。
+综合摘要时优先深入：LI, NLLT, Syntax, Language（见 reference.md），但 `crawl_log` 应显示全部 23 本。
 
 ---
 
@@ -30,37 +26,27 @@ python "$env:USERPROFILE\.agents\skills\linguistics-journal-research\scripts\lin
 **用户输入：**
 > /linguistics-journal-research already vs still 的语义对比
 
-**Agent 解析：**
-- 子领域：semantics
-- 英文检索词：`already still scalar particles semantics`
+**检索词：** `already still scalar particles semantics`
 
-**选刊：**
-`journal-of-semantics`, `natural-language-semantics`, `linguistics-philosophy`, `nllt`
+**命令：** 同上，不传 `--journals`。
 
 ---
 
 ## 示例 C：功能主义类型学（中文 idea）
 
 **用户输入：**
-> 作格配列和信息结构之间有什么互动？想做功能主义角度的研究。
+> 作格配列和信息结构之间有什么互动？
 
-**Agent 解析：**
-- 子领域：typology
-- 框架：functional
-- 英文检索词：`ergativity information structure interaction`
+**检索词：** `ergativity information structure interaction`
 
-**选刊：**
-`studies-in-language`, `functions-of-language`, `lingua`, `language`
-
-**注意：** 不选 `syntax` 或 `nllt`（生成派专刊，与功能主义框架不匹配）。
+**命令：** 爬全部 23 本；综述时重点看 Studies in Language, Functions of Language。
 
 ---
 
 ## 示例 D：结果过少时的放宽策略
 
-若首次检索仅返回 1 篇：
+若全部 23 本检索后仍不足：
 
 1. `--years 30`（扩大时间窗口）
-2. 追加综合刊：`glossa`, `lingua`, `linguistics-de-gruyter`
-3. 换用更宽泛的检索词（如 `ba construction` 替代 `Mandarin ba construction left periphery`）
-4. 启用 `enrich_abstracts.py` 补全摘要后再综合
+2. 换用更宽泛检索词
+3. 启用 `enrich_abstracts.py` 补全摘要

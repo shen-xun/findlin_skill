@@ -24,11 +24,12 @@ pip install -r scripts/requirements.txt
 ```powershell
 python scripts/linguistics_search.py `
   "Mandarin tone sandhi" `
-  --journals linguistic-inquiry,nllt,language `
-  --max-per-journal 5 `
+  --max-per-journal 3 `
   --years 8 `
   -o results.json
 ```
+
+默认爬取全部 23 本期刊；仅当需要缩小范围时传 `--journals id1,id2`。
 
 ## 与旧版（OpenAlex）的区别
 

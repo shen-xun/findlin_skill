@@ -74,10 +74,13 @@ def main() -> None:
         description="Crawl official journal sites for latest research"
     )
     parser.add_argument("query", help="Search query (English or Chinese keywords)")
-    parser.add_argument("--journals", help="Comma-separated journal IDs")
-    parser.add_argument("--max-per-journal", type=int, default=5)
+    parser.add_argument(
+        "--journals",
+        help="Comma-separated journal IDs (default: all 23 journals)",
+    )
+    parser.add_argument("--max-per-journal", type=int, default=3)
     parser.add_argument("--years", type=int, default=10, help="Look back N years (default 10 for latest)")
-    parser.add_argument("--max-total", type=int, default=30)
+    parser.add_argument("--max-total", type=int, default=60, help="Cap total results after dedup")
     parser.add_argument("-o", "--output", help="Write JSON results to file")
     args = parser.parse_args()
 
@@ -113,6 +116,7 @@ def main() -> None:
         "query": args.query,
         "min_year": min_year,
         "strategy": "direct_site_crawl",
+        "journals_crawled": len(journals),
         "total": len(all_papers),
         "crawl_log": crawl_log,
         "papers": all_papers,
