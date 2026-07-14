@@ -1,6 +1,17 @@
-# 纯语言学期刊参考手册
+# 期刊官网爬取参考
 
-本文件为 [SKILL.md](SKILL.md) 的补充参考，含 23 本期刊的选刊指南与已知局限。
+本 skill **不再使用 OpenAlex**，改为直接访问各期刊官网及其出版商搜索页，按**发表时间倒序**检索最新研究。
+
+## 爬取策略
+
+| 方法 | 说明 | 适用期刊 |
+|------|------|----------|
+| `crossref` | 通过 CrossRef 获取出版商提交的元数据，按 ISSN + 发表日期排序 | **全部 23 本**（默认） |
+| `springer` | 直接爬取 Springer Link 搜索页 | NLLT、Natural Language Semantics、Linguistics & Philosophy |
+| `rss` | 抓取期刊 RSS 最新目录，按关键词过滤 | Glossa、Languages (MDPI) |
+| `jcip` | 直接爬取《中文信息学报》官网检索与当期目录 | 中文信息学报 |
+
+默认 `--years 10`，优先返回近十年内**最新发表**的论文。
 
 ## 选刊决策树
 
@@ -12,20 +23,11 @@
 | semantics（语义） | Journal of Semantics, Natural Language Semantics | Linguistics & Philosophy, NLLT |
 | phonology（音系） | Phonology | Language, Journal of Linguistics |
 | corpus（语料库） | Corpus Linguistics & Linguistic Theory | Lingua, Glossa, 中文信息学报 |
-| computational / NLP（计算语言学） | 中文信息学报 | Lingua, Languages |
+| computational / NLP | 中文信息学报 | Lingua, Languages |
 | typology（类型学） | Studies in Language | Functions of Language, Lingua |
 | philosophy（语言哲学） | Linguistics & Philosophy, Language Sciences | Journal of Semantics |
 | review（综述） | Annual Review of Linguistics | — |
 | general（综合） | Language, Journal of Linguistics | Glossa, Lingua |
-
-### 按理论框架
-
-| 框架 | 推荐期刊 |
-|------|----------|
-| generative（生成派） | NLLT, Linguistic Inquiry, The Linguistic Review | Language, Syntax |
-| functional（功能派） | Functions of Language, Studies in Language | Theoretical Linguistics, Lingua |
-| formal（形式主义） | Syntax, Journal of Semantics, Phonology | NLLT, Natural Language Semantics |
-| 不限 | Language, Journal of Linguistics, Glossa | Lingua, Theoretical Linguistics |
 
 ### 特殊定位
 
@@ -33,44 +35,43 @@
 |------|------|
 | 亚太理论语言学 | Language & Linguistics |
 | 跨学科 / 偏应用 | Languages, Lingua, 中文信息学报 |
-| 中文 NLP / 信息处理 | 中文信息学报 | Language & Linguistics, Lingua |
-| 高发文量、覆盖面广 | Glossa |
-| 顶刊、高影响力 | Language |
+| 中文 NLP / 信息处理 | 中文信息学报 |
+| 最新发文（OA） | Glossa, Languages |
 
-### 选刊数量建议
+## 23 本期刊官网一览
 
-- 窄领域 idea（如纯音系）：3–5 本专刊 + 1–2 本综合刊
-- 宽领域 idea（如语言与认知接口）：5–8 本，覆盖多个子领域
-- 理论框架明确时：至少 2 本匹配该框架的刊
+| 期刊 | 官网 | 出版商 |
+|------|------|--------|
+| Annual Review of Linguistics | https://www.annualreviews.org/journal/linguistics | Annual Reviews |
+| Language | https://www.linguisticsociety.org/language | LSA |
+| Linguistic Inquiry | https://direct.mit.edu/ling | MIT Press |
+| Corpus Linguistics & Linguistic Theory | https://www.degruyter.com/journal/key/cllt/html | De Gruyter |
+| Natural Language & Linguistic Theory | https://link.springer.com/journal/11049 | Springer |
+| Journal of Linguistics | https://www.cambridge.org/core/journals/journal-of-linguistics | Cambridge |
+| Linguistics | https://www.degruyter.com/journal/key/ling/html | De Gruyter |
+| Lingua | https://www.sciencedirect.com/journal/lingua | Elsevier |
+| Glossa | https://www.glossa-journal.org | OLH |
+| Journal of Semantics | https://academic.oup.com/jos | OUP |
+| Natural Language Semantics | https://link.springer.com/journal/11050 | Springer |
+| Syntax | https://www.journals.uchicago.edu/journals/syntax | Chicago |
+| Phonology | https://www.cambridge.org/core/journals/phonology | Cambridge |
+| Theoretical Linguistics | https://www.degruyter.com/journal/key/thli/html | De Gruyter |
+| Linguistics Vanguard | https://www.degruyter.com/journal/key/lingvan/html | De Gruyter |
+| Linguistics & Philosophy | https://link.springer.com/journal/11051 | Springer |
+| Language Sciences | https://www.sciencedirect.com/journal/language-sciences | Elsevier |
+| Functions of Language | https://benjamins.com/catalog/fol | Benjamins |
+| Studies in Language | https://benjamins.com/catalog/sl | Benjamins |
+| The Linguistic Review | https://www.degruyter.com/journal/key/tlir/html | De Gruyter |
+| Language & Linguistics | https://www.degruyter.com/journal/key/lali/html | De Gruyter |
+| Languages | https://www.mdpi.com/journal/languages | MDPI |
+| 中文信息学报 | https://jcip.cipsc.org.cn | 中国中文信息学会 |
 
-## 期刊完整列表
-
-详见 [journals.json](journals.json)。23 本期刊按 priority 排序：
-
-- **priority 1**：子领域顶刊 / 综合顶刊（Language, LI, NLLT, JoL, JoS, NLS, Syntax, Phonology）
-- **priority 2**：重要但覆盖面较窄或周期较长的刊（含 *中文信息学报*）
-- **priority 3**：哲学取向或跨学科取向的刊
+完整爬取配置见 [journals.json](journals.json) 中的 `homepage`、`search_page`、`crawl_methods`。
 
 ## 已知局限
 
-1. **API 滞后**：OpenAlex 对最新录用论文可能滞后 6–18 个月，慢刊（*Linguistics*、*Theoretical Linguistics*）尤其明显
-2. **摘要缺失**：约 30–40% 论文在 OpenAlex 中无摘要，可启用 `enrich_abstracts.py` 补全
-3. **Annual Review**：仅邀稿综述，检索到的是他人已写的 review，不宜评估 idea 原创性
-4. **付费墙**：脚本仅获取元数据和摘要，无法验证全文论证细节
-5. **期刊名歧义**：`Linguistics`（De Gruyter）已通过 ISSN `0024-3949` 消歧；`Languages`（MDPI）通过 ISSN `2226-471X` 消歧；`中文信息学报` 通过 ISSN `1003-0077` 标识
-6. **中文信息学报**：OpenAlex 论文元数据以英文标题为主，中文摘要覆盖率较低；idea 检索建议同时使用中英文关键词
-
-## 安装后配置
-
-首次使用前，在 `scripts/` 目录下的脚本中将 `MAILTO` 替换为你的邮箱（进入 OpenAlex polite pool，提高速率限制）：
-
-```python
-MAILTO = "your-email@example.com"
-```
-
-然后运行一次性 ID 解析：
-
-```bash
-pip install -r scripts/requirements.txt
-python scripts/resolve_journal_ids.py
-```
+1. **付费墙**：多数出版商网站只返回标题/摘要，无法获取全文
+2. **反爬限制**：Elsevier、OUP、MIT Press 等站点可能拦截自动化请求，此时回退到 CrossRef 元数据
+3. **中文信息学报**：官网爬取受网络环境影响，失败时仍可通过 CrossRef ISSN 检索
+4. **RSS 过滤**：RSS 仅提供最新目录，需关键词匹配，可能漏掉相关但标题不明显的论文
+5. **礼貌爬取**：脚本内置请求间隔（~0.4s），请勿并发大量请求

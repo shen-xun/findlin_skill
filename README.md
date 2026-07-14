@@ -1,69 +1,49 @@
 # Linguistics Journal Research Skill
 
-在 23 本语言学及相关期刊中自动检索与用户 research idea 相关的论文，并生成结构化中文文献综述。
+直接爬取 23 本语言学期刊**官网及出版商搜索页**，按发表时间倒序检索最新相关论文，生成结构化中文文献综述。
 
 ## 安装
 
-```bash
+```powershell
 pip install -r scripts/requirements.txt
-python scripts/resolve_journal_ids.py   # 首次使用：解析 OpenAlex 期刊 ID
 ```
 
-建议将 `scripts/` 中的 `MAILTO` 替换为你的真实邮箱（OpenAlex polite pool）。
+## 爬取哪些网站？
 
-## 在 Cursor 中使用
+每本期刊的 `homepage` 和 `search_page` 配置在 [journals.json](journals.json)，完整列表见 [reference.md](reference.md)。
 
-### 方式一：自动触发
+| 爬取方式 | 覆盖 |
+|----------|------|
+| CrossRef（出版商元数据，按 ISSN 最新排序） | 全部 23 本 |
+| Springer Link 直爬 | NLLT、NLS、L&P |
+| RSS 最新目录 | Glossa、Languages |
+| 中文信息学报官网 | jcip.cipsc.org.cn |
 
-在对话中描述语言学 research idea，Agent 会自动加载本 skill。例如：
+## 使用
 
-> 我想研究汉语话题化结构的左缘语层，有相关文献吗？
-
-### 方式二：显式调用
-
-> /linguistics-journal-research 空主语参数的跨语言对比
-
-或：
-
-> 用 linguistics-journal-research skill 帮我调研这个 idea：……
-
-## 手动检索
-
-```bash
-python scripts/linguistics_search.py \
-  "pro-drop parameter" \
-  --journals nllt,language,syntax \
-  --max-per-journal 5
+```powershell
+python scripts/linguistics_search.py `
+  "Mandarin tone sandhi" `
+  --journals linguistic-inquiry,nllt,language `
+  --max-per-journal 5 `
+  --years 8 `
+  -o results.json
 ```
 
-## 文件结构
+## 与旧版（OpenAlex）的区别
 
+| | 旧版 | 新版 |
+|---|---|---|
+| 数据源 | OpenAlex 第三方索引 | 期刊官网 + 出版商搜索页 |
+| 时效性 | 可能滞后 6–18 个月 | 按 `published` 倒序，优先最新 |
+| 透明度 | 不透明 | `crawl_log` 记录爬了哪些网站 |
+
+## 部署
+
+```powershell
+# 克隆
+git clone https://github.com/shen-xun/findlin_skill.git
+
+# 复制到 Cursor skills 目录
+Copy-Item -Recurse findlin_skill "$env:USERPROFILE\.agents\skills\linguistics-journal-research"
 ```
-linguistics-journal-research/
-├── SKILL.md              # Agent 主工作流
-├── reference.md          # 选刊决策树
-├── journals.json         # 23 本期刊注册表
-├── examples.md           # 使用示例
-└── scripts/
-    ├── linguistics_search.py
-    ├── resolve_journal_ids.py
-    ├── enrich_abstracts.py
-    └── requirements.txt
-```
-
-## 期刊覆盖
-
-23 本语言学及相关期刊，涵盖句法、语义、音系、语料库、类型学、语言哲学、中文信息处理等子领域。详见 [reference.md](reference.md)。
-
-## 局限
-
-- 基于 OpenAlex 元数据，不阅读全文
-- 最新录用论文可能有 6–18 个月滞后
-- 约 30–40% 论文摘要缺失（可用 `enrich_abstracts.py` 部分补全）
-
-## 部署到 Cursor
-
-克隆本仓库后，将 `linguistics-journal-research/` 目录：
-
-- 复制到 `~/.cursor/skills/`（个人全局），或
-- 保留在项目中，并在 Cursor Rules 中注明 skill 路径

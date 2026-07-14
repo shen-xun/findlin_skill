@@ -14,12 +14,14 @@
 `linguistic-inquiry`, `nllt`, `syntax`, `language`, `journal-of-linguistics`
 
 **命令：**
-```bash
-python skills/linguistics-journal-research/scripts/linguistics_search.py \
-  "Mandarin ba construction syntactic analysis" \
-  --journals linguistic-inquiry,nllt,syntax,language,journal-of-linguistics \
-  --max-per-journal 5 --years 25
+```powershell
+python "$env:USERPROFILE\.agents\skills\linguistics-journal-research\scripts\linguistics_search.py" `
+  "Mandarin ba construction syntactic analysis" `
+  --journals linguistic-inquiry,nllt,syntax,language,journal-of-linguistics `
+  --max-per-journal 5 --years 8 -o results.json
 ```
+
+输出 `crawl_log` 会显示爬取了哪些期刊官网及命中数。
 
 ---
 
