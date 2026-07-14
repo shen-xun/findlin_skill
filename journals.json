@@ -1,0 +1,453 @@
+[
+  {
+    "id": "annual-review-linguistics",
+    "display_name": "Annual Review of Linguistics",
+    "issn": [
+      "2333-9683"
+    ],
+    "openalex_source_id": "S4210191548",
+    "subfields": [
+      "review"
+    ],
+    "frameworks": [
+      "all"
+    ],
+    "priority": 2,
+    "notes": "仅邀稿综述，不适合作为原创 idea 检索主来源",
+    "search_aliases": [
+      "Annual Review of Linguistics"
+    ]
+  },
+  {
+    "id": "language",
+    "display_name": "Language",
+    "issn": [
+      "0097-8507"
+    ],
+    "openalex_source_id": "S176347361",
+    "subfields": [
+      "general",
+      "theoretical"
+    ],
+    "frameworks": [
+      "generative",
+      "formal",
+      "functional"
+    ],
+    "priority": 1,
+    "notes": "理论语言学顶刊",
+    "search_aliases": [
+      "Language journal Linguistic Society of America"
+    ]
+  },
+  {
+    "id": "linguistic-inquiry",
+    "display_name": "Linguistic Inquiry",
+    "issn": [
+      "0024-3892"
+    ],
+    "openalex_source_id": "S8506441",
+    "subfields": [
+      "general",
+      "syntax"
+    ],
+    "frameworks": [
+      "generative"
+    ],
+    "priority": 1,
+    "notes": "",
+    "search_aliases": [
+      "Linguistic Inquiry MIT Press"
+    ]
+  },
+  {
+    "id": "corpus-linguistics-theory",
+    "display_name": "Corpus Linguistics and Linguistic Theory",
+    "issn": [
+      "1613-7027"
+    ],
+    "openalex_source_id": "S93319263",
+    "subfields": [
+      "corpus",
+      "syntax"
+    ],
+    "frameworks": [
+      "formal"
+    ],
+    "priority": 2,
+    "notes": "",
+    "search_aliases": [
+      "Corpus Linguistics and Linguistic Theory"
+    ]
+  },
+  {
+    "id": "nllt",
+    "display_name": "Natural Language & Linguistic Theory",
+    "issn": [
+      "0167-806X"
+    ],
+    "openalex_source_id": "S36887808",
+    "subfields": [
+      "syntax",
+      "semantics"
+    ],
+    "frameworks": [
+      "generative"
+    ],
+    "priority": 1,
+    "notes": "生成语言学重要期刊",
+    "search_aliases": [
+      "Natural Language and Linguistic Theory NLLT"
+    ]
+  },
+  {
+    "id": "journal-of-linguistics",
+    "display_name": "Journal of Linguistics",
+    "issn": [
+      "0022-2267"
+    ],
+    "openalex_source_id": "S61363356",
+    "subfields": [
+      "general"
+    ],
+    "frameworks": [
+      "all"
+    ],
+    "priority": 1,
+    "notes": "",
+    "search_aliases": [
+      "Journal of Linguistics Cambridge"
+    ]
+  },
+  {
+    "id": "linguistics-de-gruyter",
+    "display_name": "Linguistics",
+    "issn": [
+      "0024-3949"
+    ],
+    "openalex_source_id": "S126923661",
+    "subfields": [
+      "general"
+    ],
+    "frameworks": [
+      "all"
+    ],
+    "priority": 2,
+    "notes": "De Gruyter 出版，发表周期较长（平均 1-3 年）",
+    "search_aliases": [
+      "Linguistics De Gruyter"
+    ]
+  },
+  {
+    "id": "lingua",
+    "display_name": "Lingua",
+    "issn": [
+      "0024-3841"
+    ],
+    "openalex_source_id": "S105737376",
+    "subfields": [
+      "general"
+    ],
+    "frameworks": [
+      "all"
+    ],
+    "priority": 2,
+    "notes": "综合刊，覆盖面广，常含广义应用语言学",
+    "search_aliases": [
+      "Lingua Elsevier"
+    ]
+  },
+  {
+    "id": "glossa",
+    "display_name": "Glossa: a journal of general linguistics",
+    "issn": [
+      "2397-1835"
+    ],
+    "openalex_source_id": "S4210226983",
+    "subfields": [
+      "general"
+    ],
+    "frameworks": [
+      "all"
+    ],
+    "priority": 2,
+    "notes": "年发文量大",
+    "search_aliases": [
+      "Glossa journal general linguistics"
+    ]
+  },
+  {
+    "id": "journal-of-semantics",
+    "display_name": "Journal of Semantics",
+    "issn": [
+      "0167-5133"
+    ],
+    "openalex_source_id": "S146447972",
+    "subfields": [
+      "semantics"
+    ],
+    "frameworks": [
+      "formal"
+    ],
+    "priority": 1,
+    "notes": "",
+    "search_aliases": [
+      "Journal of Semantics Oxford"
+    ]
+  },
+  {
+    "id": "natural-language-semantics",
+    "display_name": "Natural Language Semantics",
+    "issn": [
+      "0925-854X"
+    ],
+    "openalex_source_id": "S186219999",
+    "subfields": [
+      "semantics"
+    ],
+    "frameworks": [
+      "formal"
+    ],
+    "priority": 1,
+    "notes": "",
+    "search_aliases": [
+      "Natural Language Semantics"
+    ]
+  },
+  {
+    "id": "syntax",
+    "display_name": "Syntax",
+    "issn": [
+      "1368-1385"
+    ],
+    "openalex_source_id": "S44683723",
+    "subfields": [
+      "syntax"
+    ],
+    "frameworks": [
+      "formal"
+    ],
+    "priority": 1,
+    "notes": "限形式主义句法，年发文极少",
+    "search_aliases": [
+      "Syntax journal linguistics"
+    ]
+  },
+  {
+    "id": "phonology",
+    "display_name": "Phonology",
+    "issn": [
+      "0952-5747"
+    ],
+    "openalex_source_id": "S23261261",
+    "subfields": [
+      "phonology"
+    ],
+    "frameworks": [
+      "formal"
+    ],
+    "priority": 1,
+    "notes": "",
+    "search_aliases": [
+      "Phonology Cambridge"
+    ]
+  },
+  {
+    "id": "theoretical-linguistics",
+    "display_name": "Theoretical Linguistics",
+    "issn": [
+      "0301-4428"
+    ],
+    "openalex_source_id": "S183937543",
+    "subfields": [
+      "general"
+    ],
+    "frameworks": [
+      "generative",
+      "functional"
+    ],
+    "priority": 2,
+    "notes": "形式派与功能派均收，发表周期较长",
+    "search_aliases": [
+      "Theoretical Linguistics"
+    ]
+  },
+  {
+    "id": "linguistics-vanguard",
+    "display_name": "Linguistics Vanguard",
+    "issn": [
+      "2199-1747"
+    ],
+    "openalex_source_id": "S4210237318",
+    "subfields": [
+      "general"
+    ],
+    "frameworks": [
+      "all"
+    ],
+    "priority": 2,
+    "notes": "",
+    "search_aliases": [
+      "Linguistics Vanguard De Gruyter"
+    ]
+  },
+  {
+    "id": "linguistics-philosophy",
+    "display_name": "Linguistics and Philosophy",
+    "issn": [
+      "0165-0157"
+    ],
+    "openalex_source_id": "S176883142",
+    "subfields": [
+      "semantics",
+      "philosophy"
+    ],
+    "frameworks": [
+      "formal"
+    ],
+    "priority": 2,
+    "notes": "",
+    "search_aliases": [
+      "Linguistics and Philosophy"
+    ]
+  },
+  {
+    "id": "language-sciences",
+    "display_name": "Language Sciences",
+    "issn": [
+      "0388-0001"
+    ],
+    "openalex_source_id": "S67473218",
+    "subfields": [
+      "philosophy"
+    ],
+    "frameworks": [
+      "all"
+    ],
+    "priority": 3,
+    "notes": "偏语言哲学，强调语言学研究的形而上学与认识论",
+    "search_aliases": [
+      "Language Sciences Elsevier"
+    ]
+  },
+  {
+    "id": "functions-of-language",
+    "display_name": "Functions of Language",
+    "issn": [
+      "0929-998X"
+    ],
+    "openalex_source_id": "S55021466",
+    "subfields": [
+      "general"
+    ],
+    "frameworks": [
+      "functional"
+    ],
+    "priority": 2,
+    "notes": "仅限功能主义研究",
+    "search_aliases": [
+      "Functions of Language Benjamins"
+    ]
+  },
+  {
+    "id": "studies-in-language",
+    "display_name": "Studies in Language",
+    "issn": [
+      "0378-4177"
+    ],
+    "openalex_source_id": "S197342720",
+    "subfields": [
+      "typology"
+    ],
+    "frameworks": [
+      "functional"
+    ],
+    "priority": 2,
+    "notes": "仅限功能主义研究",
+    "search_aliases": [
+      "Studies in Language Benjamins"
+    ]
+  },
+  {
+    "id": "linguistic-review",
+    "display_name": "The Linguistic Review",
+    "issn": [
+      "0167-6318"
+    ],
+    "openalex_source_id": "S150241694",
+    "subfields": [
+      "general"
+    ],
+    "frameworks": [
+      "generative"
+    ],
+    "priority": 2,
+    "notes": "仅限生成派框架",
+    "search_aliases": [
+      "The Linguistic Review De Gruyter"
+    ]
+  },
+  {
+    "id": "language-and-linguistics",
+    "display_name": "Language and Linguistics",
+    "issn": [
+      "1606-873X"
+    ],
+    "openalex_source_id": "S39669439",
+    "subfields": [
+      "general"
+    ],
+    "frameworks": [
+      "all"
+    ],
+    "priority": 2,
+    "notes": "限亚太地区理论语言学研究",
+    "search_aliases": [
+      "Language and Linguistics Asia Pacific"
+    ]
+  },
+  {
+    "id": "languages-mdpi",
+    "display_name": "Languages",
+    "issn": [
+      "2226-471X"
+    ],
+    "openalex_source_id": "S4210239940",
+    "subfields": [
+      "general",
+      "applied"
+    ],
+    "frameworks": [
+      "interdisciplinary"
+    ],
+    "priority": 3,
+    "notes": "纯语言学刊中最偏应用与跨学科",
+    "search_aliases": [
+      "Languages MDPI"
+    ]
+  },
+  {
+    "id": "journal-of-chinese-information-processing",
+    "display_name": "Journal of Chinese Information Processing",
+    "issn": [
+      "1003-0077"
+    ],
+    "openalex_source_id": "S2765077740",
+    "subfields": [
+      "computational",
+      "nlp",
+      "corpus",
+      "applied"
+    ],
+    "frameworks": [
+      "interdisciplinary"
+    ],
+    "priority": 2,
+    "notes": "中文信息学报，中国中文信息学会会刊；偏计算语言学、NLP、中文信息处理与应用",
+    "search_aliases": [
+      "Journal of Chinese Information Processing",
+      "中文信息学报",
+      "Zhongwen xinxi xuebao"
+    ]
+  }
+]
